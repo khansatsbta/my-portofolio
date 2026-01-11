@@ -20,7 +20,7 @@ const Navbar = () => {
                 K
             </div>
             <ul style={{ display: 'flex', gap: '2rem' }}>
-                {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+                {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
                     <li key={item}>
                         <a href={`#${item.toLowerCase()}`} style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-primary)' }}>
                             {item}

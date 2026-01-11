@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <section id="about-me" className="section-padding" style={{ position: 'relative' }}>
+        <section id="about" className="section-padding" style={{ position: 'relative' }}>
             <div className="glass-card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>
                     Beyond the Code

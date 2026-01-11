@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <section id="about" className="section-padding" style={{
+        <section id="home" className="section-padding" style={{
             minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
