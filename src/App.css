@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* App specific styles if needed */
+.app-container {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Background gradient blobs can go here */
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.app-container::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(112, 0, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+  z-index: -1;
+}
