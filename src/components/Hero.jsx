@@ -1,5 +1,6 @@
 import React from 'react';
 import { TbMapPin } from 'react-icons/tb';
+import { HiOutlineSparkles } from "react-icons/hi2";
 
 const Hero = () => {
     return (
@@ -19,9 +20,11 @@ const Hero = () => {
                 borderRadius: '50px',
                 color: 'var(--accent-cyan)',
                 fontSize: '0.9rem',
-                display: 'inline-block'
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px'
             }}>
-                Available for Work and Collaboration
+                <HiOutlineSparkles /> Available for Work and Collaboration
             </div>
 
             <div style={{
@@ -101,15 +104,7 @@ const Hero = () => {
                 <a href="#projects" className="btn-primary">
                     View Projects
                 </a>
-                <a href="#contact" style={{
-                    padding: '12px 24px',
-                    borderRadius: '50px',
-                    fontWeight: 600,
-                    border: '1px solid var(--accent-cyan)',
-                    background: 'transparent',
-                    color: 'var(--accent-cyan)',
-                    transition: 'all 0.3s'
-                }}>
+                <a href="#contact" className="btn-outline">
                     Contact Me
                 </a>
             </div>
