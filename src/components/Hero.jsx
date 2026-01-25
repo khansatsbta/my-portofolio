@@ -21,7 +21,7 @@ const Hero = () => {
                 fontSize: '0.9rem',
                 display: 'inline-block'
             }}>
-                ✨ Available for Work and Collaboration
+                Available for Work and Collaboration
             </div>
 
             <div style={{
