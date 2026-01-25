@@ -1,9 +1,10 @@
 import React from 'react';
+import { TbBolt, TbBarbell, TbCoffee, TbDeviceGamepad2, TbHeadphones, TbMoonStars } from 'react-icons/tb';
 
 const About = () => {
     return (
         <section id="about" className="section-padding" style={{ position: 'relative' }}>
-            <div className="glass-card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
+            <div className="glass-card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem', marginBottom: '2rem' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>
                     Beyond the Code
                 </h2>
@@ -23,6 +24,136 @@ const About = () => {
                         Whether it's optimizing RAG agents for public sector websites or calculating tax modules,
                         my goal is always the same: <em style={{ color: 'var(--text-primary)' }}>Make complex systems feel simple and magic.</em>
                     </p>
+                </div>
+            </div>
+
+            {/* Fun Facts / Bio Widgets */}
+            <div style={{
+                display: 'flex',
+                gap: '1.5rem',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                maxWidth: '900px',
+                margin: '0 auto'
+            }}>
+                <div className="glass-card" style={{
+                    padding: '1.5rem',
+                    flex: '1 1 250px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    background: 'white',
+                    border: '1px solid var(--accent-cyan)'
+                }}>
+                    <div style={{
+                        background: 'rgba(2, 132, 199, 0.1)',
+                        padding: '10px',
+                        borderRadius: '50%',
+                        color: 'var(--accent-cyan)',
+                        display: 'flex'
+                    }}>
+                        <TbBolt size={24} />
+                    </div>
+                    <div>
+                        <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)' }}>ESTP Personality</h4>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Energetic & Action-Oriented</p>
+                    </div>
+                </div>
+
+                <div className="glass-card" style={{
+                    padding: '1.5rem',
+                    flex: '1 1 250px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    background: 'white',
+                    border: '1px solid var(--accent-purple)'
+                }}>
+                    <div style={{
+                        background: 'rgba(3, 105, 161, 0.1)',
+                        padding: '10px',
+                        borderRadius: '50%',
+                        color: 'var(--accent-purple)',
+                        display: 'flex'
+                    }}>
+                        <TbBarbell size={24} />
+                    </div>
+                    <div>
+                        <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)' }}>Fitness Enthusiast</h4>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Disciplined & Resilient</p>
+                    </div>
+                </div>
+
+                <div className="glass-card" style={{
+                    padding: '1.5rem',
+                    flex: '1 1 250px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    background: 'white',
+                    border: '1px solid var(--accent-cyan)'
+                }}>
+                    <div style={{
+                        background: 'rgba(2, 132, 199, 0.1)',
+                        padding: '10px',
+                        borderRadius: '50%',
+                        color: 'var(--accent-cyan)',
+                        display: 'flex'
+                    }}>
+                        <TbCoffee size={24} />
+                    </div>
+                    <div>
+                        <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)' }}>Powered by Latte</h4>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Can't code without it</p>
+                    </div>
+                </div>
+
+                <div className="glass-card" style={{
+                    padding: '1.5rem',
+                    flex: '1 1 250px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    background: 'white',
+                    border: '1px solid var(--accent-purple)'
+                }}>
+                    <div style={{
+                        background: 'rgba(3, 105, 161, 0.1)',
+                        padding: '10px',
+                        borderRadius: '50%',
+                        color: 'var(--accent-purple)',
+                        display: 'flex'
+                    }}>
+                        <TbHeadphones size={24} />
+                    </div>
+                    <div>
+                        <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)' }}>Indie Rock & Gaming</h4>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Unwinding with good vibes</p>
+                    </div>
+                </div>
+
+                <div className="glass-card" style={{
+                    padding: '1.5rem',
+                    flex: '1 1 250px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    background: 'white',
+                    border: '1px solid var(--accent-cyan)'
+                }}>
+                    <div style={{
+                        background: 'rgba(2, 132, 199, 0.1)',
+                        padding: '10px',
+                        borderRadius: '50%',
+                        color: 'var(--accent-cyan)',
+                        display: 'flex'
+                    }}>
+                        <TbMoonStars size={24} />
+                    </div>
+                    <div>
+                        <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)' }}>Night Owl Coder</h4>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Best commits happen at 2 AM</p>
+                    </div>
                 </div>
             </div>
 

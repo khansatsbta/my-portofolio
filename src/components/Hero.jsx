@@ -1,4 +1,5 @@
 import React from 'react';
+import { TbMapPin } from 'react-icons/tb';
 
 const Hero = () => {
     return (
@@ -21,6 +22,19 @@ const Hero = () => {
                 display: 'inline-block'
             }}>
                 ✨ Available for Work and Collaboration
+            </div>
+
+            <div style={{
+                marginBottom: '1.5rem',
+                color: 'var(--text-secondary)',
+                fontSize: '1rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '5px'
+            }}>
+                <TbMapPin size={18} style={{ color: 'var(--accent-cyan)' }} />
+                Jakarta / Tangerang, Indonesia
             </div>
 
             <div style={{
@@ -69,7 +83,7 @@ const Hero = () => {
                 marginBottom: '2rem',
                 fontWeight: 400
             }}>
-                Data & <span style={{ color: 'var(--accent-purple)' }}>AI Enthusiast</span>
+                Data & <span className="text-gradient">AI Enthusiast</span>
             </h2>
 
             <p style={{
@@ -91,9 +105,9 @@ const Hero = () => {
                     padding: '12px 24px',
                     borderRadius: '50px',
                     fontWeight: 600,
-                    border: '1px solid var(--glass-border)',
-                    background: 'rgba(255,255,255,0.05)',
-                    color: 'white',
+                    border: '1px solid var(--accent-cyan)',
+                    background: 'transparent',
+                    color: 'var(--accent-cyan)',
                     transition: 'all 0.3s'
                 }}>
                     Contact Me
@@ -105,8 +119,8 @@ const Hero = () => {
                 padding: '1.5rem 2.5rem',
                 borderRadius: '50px',
                 backdropFilter: 'blur(10px)',
-                background: 'rgba(5, 5, 5, 0.6)',
-                border: '1px solid rgba(255, 255, 255, 0.05)'
+                background: 'var(--glass-bg)',
+                border: '1px solid var(--glass-border)'
             }}>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginRight: '1rem' }}>
                     Currently Exploring:
@@ -115,11 +129,11 @@ const Hero = () => {
                     Agentic AI Workflows
                 </span>
                 <span style={{ margin: '0 10px', color: 'var(--glass-border)' }}>|</span>
-                <span style={{ fontWeight: 600, color: 'var(--accent-purple)' }}>
+                <span style={{ fontWeight: 600, color: 'var(--accent-cyan)' }}>
                     Generative Optimization
                 </span>
                 <span style={{ margin: '0 10px', color: 'var(--glass-border)' }}>|</span>
-                <span style={{ fontWeight: 600, color: '#fff' }}>
+                <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
                     Scaleable Pipelines
                 </span>
             </div>

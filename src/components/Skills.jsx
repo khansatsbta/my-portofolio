@@ -1,14 +1,38 @@
-import React from 'react';
+import { TbBrain, TbDatabase, TbCloud, TbServer, TbChartBar, TbUsers, TbWorld, TbTerminal } from 'react-icons/tb';
 
 const skillsData = {
-    "AI & Machine Learning": ["TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "Transformers", "LLM Fine-Tuning", "RAG", "OCR"],
-    "Data Engineering": ["Pandas", "NumPy", "Spark", "Hadoop", "Apache Airflow", "Scrapy", "Selenium"],
-    "Cloud & DevOps": ["AWS (EC2, S3)", "GCP", "Docker", "Git/GitHub"],
-    "Backend Development": ["Python", "SQL", "PHP", "Flask", "Django", "FastAPI"],
-    "Databases": ["FAISS", "Pinecone", "ChromaDB", "MySQL", "PostgreSQL"],
-    "Visualization": ["Tableau", "Power BI", "Streamlit"],
-    "Soft Skills": ["Problem-solving", "Analytical Thinking", "Team Collaboration", "Communication", "Fast Learner"],
-    "Languages": ["Bahasa Indonesia (Native)", "English (Advanced)"]
+    "AI & Machine Learning": {
+        icon: <TbBrain size={24} />,
+        items: ["TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "Transformers", "LLM Fine-Tuning", "RAG", "OCR"]
+    },
+    "Data Engineering": {
+        icon: <TbServer size={24} />,
+        items: ["Pandas", "NumPy", "Spark", "Hadoop", "Apache Airflow", "Apache Kafka", "Scrapy", "Selenium", "Requests", "BeautifulSoup"]
+    },
+    "Cloud & DevOps": {
+        icon: <TbCloud size={24} />,
+        items: ["AWS (EC2, S3)", "GCP", "Docker", "Git/GitHub"]
+    },
+    "Backend Development": {
+        icon: <TbTerminal size={24} />,
+        items: ["Python", "SQL", "PHP", "Flask", "Django", "FastAPI"]
+    },
+    "Databases": {
+        icon: <TbDatabase size={24} />,
+        items: ["FAISS", "Pinecone", "ChromaDB", "MySQL", "PostgreSQL", "Elasticsearch"]
+    },
+    "Visualization": {
+        icon: <TbChartBar size={24} />,
+        items: ["Tableau", "Power BI", "Streamlit"]
+    },
+    "Soft Skills": {
+        icon: <TbUsers size={24} />,
+        items: ["Problem-solving", "Analytical Thinking", "Team Collaboration", "Communication", "Fast Learner"]
+    },
+    "Languages": {
+        icon: <TbWorld size={24} />,
+        items: ["Bahasa Indonesia (Native)", "English (Advanced)"]
+    }
 };
 
 const Skills = () => {
@@ -19,18 +43,53 @@ const Skills = () => {
             </h2>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                {Object.entries(skillsData).map(([category, items]) => (
-                    <div key={category} className="glass-card">
-                        <h3 style={{ marginBottom: '1rem', color: 'var(--accent-cyan)' }}>{category}</h3>
+                {Object.entries(skillsData).map(([category, { icon, items }]) => (
+                    <div key={category} className="glass-card" style={{ transition: 'transform 0.3s' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
+                            <div style={{
+                                padding: '10px',
+                                borderRadius: '12px',
+                                background: 'rgba(2, 132, 199, 0.1)', // Light blue bg
+                                color: 'var(--accent-cyan)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                {icon}
+                            </div>
+                            <h3 style={{
+                                fontSize: '1.2rem',
+                                color: 'var(--text-primary)',
+                                fontWeight: 600
+                            }}>
+                                {category}
+                            </h3>
+                        </div>
+
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
                             {items.map(skill => (
                                 <span key={skill} style={{
-                                    background: 'rgba(255,255,255,0.05)',
-                                    padding: '6px 14px',
-                                    borderRadius: '20px',
+                                    background: '#f8fafc', // Slate 50
+                                    color: 'var(--text-secondary)',
+                                    padding: '8px 16px',
+                                    borderRadius: '50px',
                                     fontSize: '0.9rem',
-                                    border: '1px solid rgba(255,255,255,0.1)'
-                                }}>
+                                    fontWeight: 500,
+                                    border: '1px solid #e2e8f0', // Slate 200
+                                    transition: 'all 0.2s ease',
+                                    cursor: 'default'
+                                }}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.background = 'var(--accent-cyan)';
+                                        e.target.style.color = 'white';
+                                        e.target.style.borderColor = 'var(--accent-cyan)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.background = '#f8fafc';
+                                        e.target.style.color = 'var(--text-secondary)';
+                                        e.target.style.borderColor = '#e2e8f0';
+                                    }}
+                                >
                                     {skill}
                                 </span>
                             ))}

@@ -4,18 +4,32 @@ import { TbChevronRight, TbX } from 'react-icons/tb';
 const projects = [
     {
         title: 'Autonomous AI Content Pipeline',
-        tech: ['Qwen LLM', 'Streamlit', 'Python', 'WordPress API'],
-        desc: 'Automated news scraping and SEO article generation pipeline using fine-tuned LLMs.',
+        tech: ['Requests', 'BeautifulSoup', 'Regex', 'LLM', 'Transformers', 'PEFT', 'TRL', 'Streamlit', 'Python', 'WordPress, Linkedin, Instagram API', 'Docker', 'PostgreSQL'],
+        images: ['/project1.png', '/project1-article.png'], // Example of multiple images
+        desc: 'Automated news scraping and SEO article and post generation pipeline using fine-tuned LLMs.',
         details: [
             'Architected an autonomous AI content pipeline that scrapes real-time news to generate SEO-optimized articles.',
             'Fine-tuned the Qwen LLM to mimic human writing styles, ensuring high readability standards.',
-            'Integrated the entire workflow from data ingestion to WordPress publishing.',
+            'Integrated the entire workflow from data ingestion to WordPress, Linkedin, Instagram publishing.',
             'Built a monitoring system via a Streamlit dashboard.'
         ]
     },
     {
+        title: 'BNSP Licensing Automation',
+        tech: ['JavaScript', 'Node.js', 'Selenium', 'Frontend Injection', 'Automation'],
+        image: '/project3.png',
+        desc: 'Automated compliance submission pipeline bridging internal systems with external government platforms sans API.',
+        details: [
+            'Engineered a browser automation pipeline using JavaScript and Selenium to bridge the gap between internal data systems and the official BNSP portal.',
+            'Developed an automated form-filling agent that handles login, data entry, and document uploads for certification requests.',
+            'Implemented frontend injection techniques to handle complex document upload workflows where no public API was available.',
+            'Significantly reduced manual submission time and errors for license processing.'
+        ]
+    },
+    {
         title: 'B2B Lead Gen Pipeline',
-        tech: ['Python', 'OCR', 'Scraping', 'Multi-threading'],
+        tech: ['Selenium', 'Requests', 'BeautifulSoup', 'Regex', 'Python', 'OCR', 'ThreadPool', 'MySQL', 'Docker'],
+        image: '/project2.png',
         desc: 'Automated pipeline aggregating university records and enriching with social media intelligence.',
         details: [
             'Engineered an automated data pipeline to generate B2B leads by aggregating university records from PDDIKTI.',
@@ -26,7 +40,7 @@ const projects = [
     },
     {
         title: 'Gov Info Retrieval Bot',
-        tech: ['RAG', 'AI Agent', 'Python', 'Vector DB'],
+        tech: ['Selenium', 'Requests', 'BeautifulSoup', 'Regex', 'LLM', 'Python', 'ChromaDB', 'Langchain', 'Typescript', 'Docker', 'FastAPI'],
         desc: 'AI agent for solving information discovery challenges on complex public sector websites.',
         details: [
             'Designed and deployed an AI agent to solve information discovery challenges on complex public sector websites.',
@@ -36,7 +50,7 @@ const projects = [
     },
     {
         title: 'Financial System & AI OCR',
-        tech: ['AI OCR', 'Python', 'Real-time Analytics'],
+        tech: ['OCR', 'Python', 'Flask', 'MySQL'],
         desc: 'Full-cycle financial system with real-time budget control and invoice parsing.',
         details: [
             'Developed a full-cycle financial system with real-time budget control.',
@@ -46,7 +60,7 @@ const projects = [
     },
     {
         title: 'Payroll Processing System',
-        tech: ['Python', 'SQL', 'Automation'],
+        tech: ['Python', 'MySQL', 'Automation', 'Flask'],
         desc: 'Automated system for base pay, deductions, overtime, and tax compliance.',
         details: [
             'Engineered a full payroll processing system automating base pay, attendance deductions, and overtime.',
@@ -67,7 +81,8 @@ const projects = [
     },
     {
         title: 'FAQ RAG Chatbot',
-        tech: ['DeepSeek', 'Ollama', 'LangChain', 'Docker'],
+        tech: ['DeepSeek', 'Ollama', 'LangChain', 'Docker', 'Streamlit'],
+        image: '/project-nawa.jpeg',
         desc: 'Sophisticated FAQ bot using local vector storage and embedding models for precise answers.',
         details: [
             'Developed a chatbot that responds to all user inquiries regarding the FAQ via a chat interface.',
@@ -78,6 +93,7 @@ const projects = [
     {
         title: 'Recraftify - Waste AI',
         tech: ['TensorFlow', 'Flask', 'MobileNetV2'],
+        image: '/project-re.jpeg',
         desc: 'Image classification model for waste sorting with 95% accuracy, deployed as REST API.',
         details: [
             'Spearheaded the development of a multi-class image classification model for the Recraftify mobile app.',
@@ -89,6 +105,7 @@ const projects = [
     {
         title: 'WhatsApp RAG Bot',
         tech: ['Twilio', 'OpenAI', 'AWS', 'Flask'],
+        image: '/project-warag.jpeg',
         desc: 'Real-time document interaction bot integrated with WhatsApp for automated customer responses.',
         details: [
             'Created a PDF RAG chatbot integrated with Twilio and OpenAI API.',
@@ -98,7 +115,7 @@ const projects = [
     },
     {
         title: 'Sentiment Analysis',
-        tech: ['TensorFlow', 'LSTM', 'Python'],
+        tech: ['TensorFlow', 'LSTM', 'Regex', 'Python'],
         desc: 'Customer sentiment classification for service providers with 92% accuracy using LSTM.',
         details: [
             'Conducted sentiment analysis on a dataset of customer tweets regarding cellular service providers.',
@@ -119,7 +136,22 @@ const projects = [
 ];
 
 const ProjectModal = ({ project, onClose }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
     if (!project) return null;
+
+    // Normalize images: use project.images array if available, otherwise fallback to single project.image
+    const images = project.images || (project.image ? [project.image] : []);
+
+    const nextImage = (e) => {
+        e.stopPropagation();
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevImage = (e) => {
+        e.stopPropagation();
+        setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
 
     return (
         <div style={{
@@ -128,7 +160,7 @@ const ProjectModal = ({ project, onClose }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
             backdropFilter: 'blur(5px)',
             zIndex: 2000,
             display: 'flex',
@@ -144,7 +176,9 @@ const ProjectModal = ({ project, onClose }) => {
                     maxHeight: '90vh',
                     overflowY: 'auto',
                     position: 'relative',
-                    padding: '2rem'
+                    padding: '2rem',
+                    background: '#ffffff', // Enhance readability for modal
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
                 }}
                 onClick={e => e.stopPropagation()}
             >
@@ -158,11 +192,100 @@ const ProjectModal = ({ project, onClose }) => {
                         border: 'none',
                         color: 'var(--text-secondary)',
                         cursor: 'pointer',
-                        fontSize: '1.5rem'
+                        fontSize: '1.5rem',
+                        zIndex: 10
                     }}
                 >
                     <TbX />
                 </button>
+
+                {images.length > 0 && (
+                    <div style={{
+                        width: '100%',
+                        height: '250px',
+                        marginBottom: '1.5rem',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        border: '1px solid var(--glass-border)',
+                        position: 'relative'
+                    }}>
+                        <img
+                            src={images[currentImageIndex]}
+                            alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+
+                        {/* Navigation Arrows */}
+                        {images.length > 1 && (
+                            <>
+                                <button
+                                    onClick={prevImage}
+                                    style={{
+                                        position: 'absolute',
+                                        left: '10px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        background: 'rgba(0,0,0,0.5)',
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '50%',
+                                        width: '30px',
+                                        height: '30px',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}
+                                >
+                                    ‹
+                                </button>
+                                <button
+                                    onClick={nextImage}
+                                    style={{
+                                        position: 'absolute',
+                                        right: '10px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        background: 'rgba(0,0,0,0.5)',
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '50%',
+                                        width: '30px',
+                                        height: '30px',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}
+                                >
+                                    ›
+                                </button>
+                                {/* Dots/Indicators */}
+                                <div style={{
+                                    position: 'absolute',
+                                    bottom: '10px',
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    display: 'flex',
+                                    gap: '6px'
+                                }}>
+                                    {images.map((_, idx) => (
+                                        <div
+                                            key={idx}
+                                            style={{
+                                                width: '6px',
+                                                height: '6px',
+                                                borderRadius: '50%',
+                                                backgroundColor: idx === currentImageIndex ? 'var(--accent-cyan)' : 'white',
+                                                opacity: idx === currentImageIndex ? 1 : 0.5
+                                            }}
+                                        />
+                                    ))}
+                                </div>
+                            </>
+                        )}
+                    </div>
+                )}
 
                 <h3 className="text-gradient" style={{ fontSize: '1.8rem', marginBottom: '1rem', paddingRight: '2rem' }}>
                     {project.title}

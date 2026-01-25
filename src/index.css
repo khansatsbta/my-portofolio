@@ -1,19 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
 
 :root {
-  --bg-color: #050505;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
+  /* Simple Professional Light Theme */
+  --bg-color: #ffffff;
+  --text-primary: #0f172a;
+  /* Slate 900 */
+  --text-secondary: #475569;
+  /* Slate 600 */
 
   /* Brand Colors */
-  --accent-cyan: #00f0ff;
-  --accent-purple: #7000ff;
-  --gradient-main: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  --accent-cyan: #0284c7;
+  /* Sky 600 */
+  --accent-purple: #0369a1;
+  /* Sky 700 */
+  --gradient-main: linear-gradient(135deg, #0f172a, #0284c7);
 
   /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-blur: 10px;
+  --glass-bg: rgba(241, 245, 249, 0.6);
+  /* Slate 100 with opacity */
+  --glass-border: rgba(15, 23, 42, 0.1);
+  /* Subtle dark border */
+  --glass-blur: 12px;
 
   /* Spacing */
   --spacing-sm: 8px;
@@ -31,7 +38,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-  /* Offset for sticky navbar */
 }
 
 body {
@@ -65,7 +71,7 @@ ul {
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(15, 23, 42, 0.2);
   transform: translateY(-5px);
 }
 
@@ -85,7 +91,7 @@ ul {
 
 .btn-primary {
   background: var(--gradient-main);
-  color: white;
+  color: #ffffff;
   padding: 12px 24px;
   border-radius: 50px;
   font-weight: 600;

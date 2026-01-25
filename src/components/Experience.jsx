@@ -17,7 +17,9 @@ const experiences = [
             'Engineered a full payroll processing system automating base pay, deductions, and tax calculations.',
             'Developed a real-time financial budget control system with AI-powered OCR for invoice scanning.',
             'Architected an autonomous AI content pipeline using Qwen LLM for SEO-optimized articles.',
-            'Deployed a RAG-based AI agent for government website information retrieval.'
+            'Deployed a RAG-based AI agent for government website information retrieval.',
+            'Developed a B2B lead generation pipeline aggregating university records and enriching them with social media intelligence.',
+            'Developed an automated compliance submission pipeline bridging internal systems with external government platforms sans API.'
         ]
     },
     {
