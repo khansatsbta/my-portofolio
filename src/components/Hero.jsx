@@ -2,6 +2,48 @@ import React from 'react';
 import { TbMapPin } from 'react-icons/tb';
 import { HiOutlineSparkles } from "react-icons/hi2";
 
+const TypingEffect = ({ text }) => {
+    const [index, setIndex] = React.useState(0);
+    const [subIndex, setSubIndex] = React.useState(0);
+    const [reverse, setReverse] = React.useState(false);
+    const [blink, setBlink] = React.useState(true);
+
+    React.useEffect(() => {
+        if (index === text.length) return;
+
+        if (subIndex === text[index].length + 1 && !reverse) {
+            setReverse(true);
+            return;
+        }
+
+        if (subIndex === 0 && reverse) {
+            setReverse(false);
+            setIndex((prev) => (prev + 1) % text.length);
+            return;
+        }
+
+        const timeout = setTimeout(() => {
+            setSubIndex((prev) => prev + (reverse ? -1 : 1));
+        }, Math.max(reverse ? 75 : subIndex === text[index].length ? 1000 : 150, parseInt(Math.random() * 350)));
+
+        return () => clearTimeout(timeout);
+    }, [subIndex, index, reverse, text]);
+
+    // Blink cursor
+    React.useEffect(() => {
+        const timeout2 = setTimeout(() => {
+            setBlink((prev) => !prev);
+        }, 500);
+        return () => clearTimeout(timeout2);
+    }, [blink]);
+
+    return (
+        <>
+            {`${text[index].substring(0, subIndex)}${blink ? "|" : " "}`}
+        </>
+    );
+};
+
 const Hero = () => {
     return (
         <section id="home" className="section-padding" style={{
@@ -86,7 +128,7 @@ const Hero = () => {
                 marginBottom: '2rem',
                 fontWeight: 400
             }}>
-                Data & <span className="text-gradient">AI Enthusiast</span>
+                <TypingEffect text={['Data Engineer', 'AI Enthusiast', 'Pipeline Architect', 'Tech Explorer']} />
             </h2>
 
             <p style={{

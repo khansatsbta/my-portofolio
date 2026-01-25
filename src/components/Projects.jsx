@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TbChevronRight, TbX } from 'react-icons/tb';
+import RevealOnScroll from './RevealOnScroll';
 
 const projects = [
     {
@@ -340,37 +341,37 @@ const Projects = () => {
                 gap: '2rem'
             }}>
                 {projects.map((proj, index) => (
-                    <div key={index} className="glass-card" style={{ display: 'flex', flexDirection: 'column' }}>
-                        <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{proj.title}</h3>
-                        <p style={{ color: 'var(--text-secondary)', flexGrow: 1, marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-                            {proj.desc}
-                        </p>
-                        <div className='!mb-3' style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                            {proj.tech.map((t, i) => (
-                                <span key={i} style={{
-                                    fontSize: '0.75rem',
-                                    padding: '4px 8px',
-                                    borderRadius: '4px',
-                                    background: 'rgba(0, 240, 255, 0.1)',
-                                    color: 'var(--accent-cyan)',
-                                    border: '1px solid rgba(0, 240, 255, 0.2)'
-                                }}>
-                                    {t}
-                                </span>
-                            ))}
-                        </div>
+                    <RevealOnScroll key={index} delay={index * 0.1}>
+                        <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                            <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{proj.title}</h3>
+                            <p style={{ color: 'var(--text-secondary)', flexGrow: 1, marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+                                {proj.desc}
+                            </p>
+                            <div className='!mb-3' style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                                {proj.tech.map((t, i) => (
+                                    <span key={i} style={{
+                                        fontSize: '0.75rem',
+                                        padding: '4px 8px',
+                                        borderRadius: '4px',
+                                        background: 'rgba(0, 240, 255, 0.1)',
+                                        color: 'var(--accent-cyan)',
+                                        border: '1px solid rgba(0, 240, 255, 0.2)'
+                                    }}>
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
 
-                        {/* Removed the inline details p tag as requested, details are now in modal */}
-
-                        <div
-                            className="flex justify-end items-center gap-1 cursor-pointer hover:underline text-sm"
-                            onClick={() => setSelectedProject(proj)}
-                            style={{ color: 'var(--accent-cyan)', marginTop: 'auto', alignSelf: 'flex-end', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}
-                        >
-                            View Details
-                            <TbChevronRight size={16} />
+                            <div
+                                className="flex justify-end items-center gap-1 cursor-pointer hover:underline text-sm"
+                                onClick={() => setSelectedProject(proj)}
+                                style={{ color: 'var(--accent-cyan)', marginTop: 'auto', alignSelf: 'flex-end', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}
+                            >
+                                View Details
+                                <TbChevronRight size={16} />
+                            </div>
                         </div>
-                    </div>
+                    </RevealOnScroll>
                 ))}
             </div>
 

@@ -36,7 +36,7 @@ const About = () => {
                 maxWidth: '900px',
                 margin: '0 auto'
             }}>
-                <div className="glass-card" style={{
+                <div className="glass-card animate-float" style={{
                     padding: '1.5rem',
                     flex: '1 1 250px',
                     display: 'flex',
@@ -60,14 +60,15 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="glass-card" style={{
+                <div className="glass-card animate-float" style={{
                     padding: '1.5rem',
                     flex: '1 1 250px',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '1rem',
                     background: 'white',
-                    border: '1px solid var(--accent-purple)'
+                    border: '1px solid var(--accent-purple)',
+                    animationDelay: '1s'
                 }}>
                     <div style={{
                         background: 'rgba(3, 105, 161, 0.1)',
@@ -84,14 +85,15 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="glass-card" style={{
+                <div className="glass-card animate-float" style={{
                     padding: '1.5rem',
                     flex: '1 1 250px',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '1rem',
                     background: 'white',
-                    border: '1px solid var(--accent-cyan)'
+                    border: '1px solid var(--accent-cyan)',
+                    animationDelay: '2s'
                 }}>
                     <div style={{
                         background: 'rgba(2, 132, 199, 0.1)',
@@ -108,14 +110,15 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="glass-card" style={{
+                <div className="glass-card animate-float" style={{
                     padding: '1.5rem',
                     flex: '1 1 250px',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '1rem',
                     background: 'white',
-                    border: '1px solid var(--accent-purple)'
+                    border: '1px solid var(--accent-purple)',
+                    animationDelay: '3s'
                 }}>
                     <div style={{
                         background: 'rgba(3, 105, 161, 0.1)',
@@ -132,14 +135,15 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="glass-card" style={{
+                <div className="glass-card animate-float" style={{
                     padding: '1.5rem',
                     flex: '1 1 250px',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '1rem',
                     background: 'white',
-                    border: '1px solid var(--accent-cyan)'
+                    border: '1px solid var(--accent-cyan)',
+                    animationDelay: '4s'
                 }}>
                     <div style={{
                         background: 'rgba(2, 132, 199, 0.1)',
