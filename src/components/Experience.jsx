@@ -6,7 +6,10 @@ const experiences = [
         company: 'PT eBdesk Teknologi',
         period: 'January 2026 – Present',
         description: [
-            'Build a full data pipeline for data scientist team.'
+            'Engineered and deployed robust, scalable data pipelines, managing the full lifecycle from real-time data streaming and production to consumption and ingestion.',
+            'Spearheaded an automated Root Cause Analysis (RCA) system that maps intricate data pipelines into comprehensive Knowledge Graphs. Integrated an advanced AI agent utilizing Chain of Thought (CoT) reasoning to autonomously detect anomalies, trace pipeline failures, and provide instant, actionable remediation strategies.',
+            'Developed an automated, high-throughput web scraping infrastructure capable of harvesting and standardizing unstructured data from multiple external endpoints.',
+            'Engineered an end-to-end conversational AI infrastructure, bridging continuous metadata ingestion pipelines with custom-built MCP tools to enable complex, tool-calling chatbot capabilities.'
         ]
     },
     {

@@ -16,11 +16,11 @@ const skillsData = {
     },
     "Backend Development": {
         icon: <TbTerminal size={24} />,
-        items: ["Python", "SQL", "PHP", "Flask", "Django", "FastAPI"]
+        items: ["Python", "Node.js", "SQL", "PHP", "Flask", "Django", "FastAPI", "FastMCP"]
     },
     "Databases": {
         icon: <TbDatabase size={24} />,
-        items: ["FAISS", "Pinecone", "ChromaDB", "MySQL", "PostgreSQL", "Elasticsearch"]
+        items: ["Qdrant", "FAISS", "Pinecone", "ChromaDB", "MySQL", "PostgreSQL", "Elasticsearch"]
     },
     "Visualization": {
         icon: <TbChartBar size={24} />,
