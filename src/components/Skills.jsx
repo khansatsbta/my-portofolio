@@ -4,15 +4,15 @@ import RevealOnScroll from './RevealOnScroll';
 const skillsData = {
     "AI & Machine Learning": {
         icon: <TbBrain size={24} />,
-        items: ["TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "Transformers", "LLM Fine-Tuning", "RAG", "OCR"]
+        items: ["TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "Agno", "Transformers", "Unsloth", "vLLM", "MCP", "RAG", "OCR"]
     },
     "Data Engineering": {
         icon: <TbServer size={24} />,
-        items: ["Pandas", "NumPy", "Spark", "Hadoop", "Apache Airflow", "Apache Kafka", "Scrapy", "Selenium", "Requests", "BeautifulSoup"]
+        items: ["Pandas", "NumPy", "Spark", "Hadoop", "Apache Airflow", "Apache Kafka", "RabbitMQ", "Beanstalkd", "Scrapy", "Selenium", "Requests", "BeautifulSoup"]
     },
     "Cloud & DevOps": {
         icon: <TbCloud size={24} />,
-        items: ["AWS (EC2, S3)", "GCP", "Docker", "Git/GitHub"]
+        items: ["AWS (EC2, S3)", "GCP", "Docker", "Kubernetes", "Git/GitHub", "Jenkins"]
     },
     "Backend Development": {
         icon: <TbTerminal size={24} />,
@@ -20,7 +20,7 @@ const skillsData = {
     },
     "Databases": {
         icon: <TbDatabase size={24} />,
-        items: ["Qdrant", "FAISS", "Pinecone", "ChromaDB", "MySQL", "PostgreSQL", "Elasticsearch"]
+        items: ["Qdrant", "FAISS", "Pinecone", "ChromaDB", "MySQL", "PostgreSQL", "Elasticsearch", "MongoDB", "Clickhouse", "BigQuery"]
     },
     "Visualization": {
         icon: <TbChartBar size={24} />,
@@ -39,31 +39,23 @@ const skillsData = {
 const Skills = () => {
     return (
         <section id="skills" className="section-padding">
-            <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}>
-                Skills
+            <h2 className="text-huge" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                tech <br /> <span className="serif-text" style={{ color: 'var(--accent-color)' }}>arsenal.</span>
             </h2>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
                 {Object.entries(skillsData).map(([category, { icon, items }], index) => (
                     <RevealOnScroll key={category} delay={index * 0.1}>
-                        <div className="glass-card animate-float" style={{ transition: 'transform 0.3s', height: '100%' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-                                <div style={{
-                                    padding: '10px',
-                                    borderRadius: '12px',
-                                    background: 'rgba(2, 132, 199, 0.1)', // Light blue bg
-                                    color: 'var(--accent-cyan)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                }}>
+                        <div style={{
+                            borderTop: '2px solid var(--text-primary)',
+                            paddingTop: '1.5rem',
+                            height: '100%'
+                        }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                                <div style={{ color: 'var(--text-primary)' }}>
                                     {icon}
                                 </div>
-                                <h3 style={{
-                                    fontSize: '1.2rem',
-                                    color: 'var(--text-primary)',
-                                    fontWeight: 600
-                                }}>
+                                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
                                     {category}
                                 </h3>
                             </div>
@@ -71,25 +63,23 @@ const Skills = () => {
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
                                 {items.map(skill => (
                                     <span key={skill} style={{
-                                        background: '#f8fafc', // Slate 50
-                                        color: 'var(--text-secondary)',
+                                        background: 'transparent',
+                                        color: 'var(--text-primary)',
                                         padding: '8px 16px',
-                                        borderRadius: '50px',
+                                        borderRadius: '100px',
                                         fontSize: '0.9rem',
-                                        fontWeight: 500,
-                                        border: '1px solid #e2e8f0', // Slate 200
-                                        transition: 'all 0.2s ease',
+                                        fontWeight: 600,
+                                        border: '1px solid var(--text-primary)',
+                                        transition: 'all 0.3s ease',
                                         cursor: 'default'
                                     }}
                                         onMouseEnter={(e) => {
-                                            e.target.style.background = 'var(--accent-cyan)';
-                                            e.target.style.color = 'white';
-                                            e.target.style.borderColor = 'var(--accent-cyan)';
+                                            e.target.style.background = 'var(--text-primary)';
+                                            e.target.style.color = 'var(--bg-color)';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.target.style.background = '#f8fafc';
-                                            e.target.style.color = 'var(--text-secondary)';
-                                            e.target.style.borderColor = '#e2e8f0';
+                                            e.target.style.background = 'transparent';
+                                            e.target.style.color = 'var(--text-primary)';
                                         }}
                                     >
                                         {skill}

@@ -1,137 +1,144 @@
 import React, { useState } from 'react';
 import { TbChevronRight, TbX } from 'react-icons/tb';
 import RevealOnScroll from './RevealOnScroll';
+import ProjectVisual from './ProjectVisual';
 
 const projects = [
     {
         title: 'Autonomous AI Content Pipeline',
         tech: ['Requests', 'BeautifulSoup', 'Regex', 'LLM', 'Transformers', 'PEFT', 'TRL', 'Streamlit', 'Python', 'WordPress, Linkedin, Instagram API', 'Docker', 'PostgreSQL'],
         images: ['/project1.png', '/project1-article.png'], // Example of multiple images
-        desc: 'Automated news scraping and SEO article and post generation pipeline using fine-tuned LLMs.',
+        desc: 'A fully automated system that hunts for news and writes SEO-friendly articles using AI.',
         details: [
-            'Architected an autonomous AI content pipeline that scrapes real-time news to generate SEO-optimized articles.',
-            'Fine-tuned the Qwen LLM to mimic human writing styles, ensuring high readability standards.',
-            'Integrated the entire workflow from data ingestion to WordPress, Linkedin, Instagram publishing.',
-            'Built a monitoring system via a Streamlit dashboard.'
+            'Built a hands-free pipeline that automatically scrapes the latest news and writes SEO-optimized articles.',
+            'Trained an AI model (Qwen LLM) to write exactly like a human, keeping things readable and engaging.',
+            'Connected the whole setup to automatically publish straight to WordPress, LinkedIn, and Instagram.',
+            'Created a simple Streamlit dashboard to keep an eye on everything.'
         ]
     },
     {
         title: 'BNSP Licensing Automation',
         tech: ['JavaScript', 'Node.js', 'Selenium', 'Frontend Injection', 'Automation'],
         image: '/project3.png',
-        desc: 'Automated compliance submission pipeline bridging internal systems with external government platforms sans API.',
+        desc: 'A clever bot that handles tedious government compliance forms automatically.',
         details: [
-            'Engineered a browser automation pipeline using JavaScript and Selenium to bridge the gap between internal data systems and the official BNSP portal.',
-            'Developed an automated form-filling agent that handles login, data entry, and document uploads for certification requests.',
-            'Implemented frontend injection techniques to handle complex document upload workflows where no public API was available.',
-            'Significantly reduced manual submission time and errors for license processing.'
+            'Built a browser bot using JavaScript and Selenium to connect internal databases directly to the BNSP portal.',
+            'Automated the boring stuff: logging in, filling out forms, and uploading documents for certification requests.',
+            'Used some neat frontend tricks to upload documents on sites that didn\'t even have a public API.',
+            'Saved the team countless hours and drastically cut down on typos and manual errors.'
         ]
     },
     {
         title: 'B2B Lead Gen Pipeline',
         tech: ['Selenium', 'Requests', 'BeautifulSoup', 'Regex', 'Python', 'OCR', 'ThreadPool', 'MySQL', 'Docker'],
         image: '/project2.png',
-        desc: 'Automated pipeline aggregating university records and enriching with social media intelligence.',
+        desc: 'A data pipeline that tracks down B2B leads from university records and social media.',
         details: [
-            'Engineered an automated data pipeline to generate B2B leads by aggregating university records from PDDIKTI.',
-            'Enriched data with social media intelligence and optimized ingestion using multi-threaded Python.',
-            'Integrated Optical Character Recognition (OCR) to extract contact details from unstructured Instagram images.',
-            'Transformed raw web data into a structured database for marketing outreach.'
+            'Set up an automated system to scrape university data (PDDIKTI) and build a massive list of B2B leads.',
+            'Used multi-threaded Python to quickly enrich the data with social media intelligence.',
+            'Added AI vision (OCR) to literally read contact info right off of Instagram posts.',
+            'Turned a messy web of data into a clean, actionable database for the marketing team.'
         ]
     },
     {
         title: 'Gov Info Retrieval Bot',
         tech: ['Selenium', 'Requests', 'BeautifulSoup', 'Regex', 'LLM', 'Python', 'ChromaDB', 'Langchain', 'Typescript', 'Docker', 'FastAPI'],
-        desc: 'AI agent for solving information discovery challenges on complex public sector websites.',
+        image: '/project_gov_bot.png',
+        desc: 'An AI assistant that makes finding info on messy government websites a breeze.',
         details: [
-            'Designed and deployed an AI agent to solve information discovery challenges on complex public sector websites.',
-            'Leveraged a RAG-based system with a custom-scraped knowledge base.',
-            'Allowed users to bypass difficult navigation and obtain specific data through conversational queries.'
+            'Built an AI agent to tackle the nightmare of navigating complex public sector websites.',
+            'Created a custom knowledge base by scraping the sites and plugging them into a RAG system.',
+            'Now, users can just ask a simple question in chat instead of clicking through endless menus.'
         ]
     },
     {
         title: 'Financial System & AI OCR',
         tech: ['OCR', 'Python', 'Flask', 'MySQL'],
-        desc: 'Full-cycle financial system with real-time budget control and invoice parsing.',
+        image: '/project_finance_ocr.png',
+        desc: 'A smart finance tool that reads invoices and watches the budget in real-time.',
         details: [
-            'Developed a full-cycle financial system with real-time budget control.',
-            'Integrated an AI-powered OCR model to scan and parse invoices.',
-            'Implemented real-time comparison of expenditures against budgets to notify finance teams of overages.'
+            'Built a complete financial system that tracks the company budget as it happens.',
+            'Added an AI scanner that can read and organize messy invoices automatically.',
+            'Set up instant alerts so the finance team always knows if someone is overspending.'
         ]
     },
     {
         title: 'Payroll Processing System',
         tech: ['Python', 'MySQL', 'Automation', 'Flask'],
-        desc: 'Automated system for base pay, deductions, overtime, and tax compliance.',
+        image: '/project_payroll.png',
+        desc: 'An automated platform that takes the headache out of calculating paychecks and taxes.',
         details: [
-            'Engineered a full payroll processing system automating base pay, attendance deductions, and overtime.',
-            'Integrated PPh 21 tax calculation modules to ensure compliance.',
-            'Significantly reduced manual errors for the finance team.'
+            'Wrote a system that automatically calculates base pay, sick days, and tricky overtime rules.',
+            'Baked in local tax laws (PPh 21) so the company is always compliant.',
+            'Made payday a lot less stressful (and much more accurate) for the finance team.'
         ]
     },
     {
         title: 'AI Location Credit Scoring',
         tech: ['Python', 'Faker', 'PyCaret', 'Django'],
-        desc: 'Predictive model analyzing user movement and geolocation stability for credit risk assessment.',
+        image: '/project_credit_score.png',
+        desc: 'A predictive model that figures out credit risk based on where people go.',
         details: [
-            'Built a predictive model to classify users\' credit risk based on movement data and geolocation stability.',
-            'Engineered features from GPS, social media, and BTS data to assess risk categories.',
-            'Visualized user movement and credit scoring metrics using Tableau.',
-            'Built REST APIs using Django REST Framework for seamless integration with frontend applications.'
+            'Built an AI model that predicts credit risk by looking at how people move around and how stable their location is.',
+            'Pulled in data from GPS, social media, and cell towers to get a full picture of risk.',
+            'Created cool interactive maps in Tableau to show exactly what the AI was thinking.',
+            'Wrapped it all up in a clean API so the frontend team could easily plug it into their app.'
         ]
     },
     {
         title: 'FAQ RAG Chatbot',
         tech: ['DeepSeek', 'Ollama', 'LangChain', 'Docker', 'Streamlit'],
         image: '/project-nawa.jpeg',
-        desc: 'Sophisticated FAQ bot using local vector storage and embedding models for precise answers.',
+        desc: 'A super-smart chatbot that actually knows the answers to company FAQs.',
         details: [
-            'Developed a chatbot that responds to all user inquiries regarding the FAQ via a chat interface.',
-            'Utilized sophisticated embedding models (Ollama) and local vector storage for effective question-answering.',
-            'Integrated with Docker for containerized deployment.'
+            'Built a chatbot that actually gives helpful answers to user questions instead of just linking to a page.',
+            'Used local AI models (Ollama) and vector search so the bot actually understands what the user is asking.',
+            'Packed the whole thing into a Docker container so it can be deployed anywhere in seconds.'
         ]
     },
     {
         title: 'Recraftify - Waste AI',
         tech: ['TensorFlow', 'Flask', 'MobileNetV2'],
         image: '/project-re.jpeg',
-        desc: 'Image classification model for waste sorting with 95% accuracy, deployed as REST API.',
+        desc: 'An image recognition app that tells you exactly how to recycle your trash.',
         details: [
-            'Spearheaded the development of a multi-class image classification model for the Recraftify mobile app.',
-            'Built and curated a robust dataset by manually labeling over 23,000 waste images.',
-            'Achieved 95% accuracy using Transfer Learning with MobileNetV2.',
-            'Deployed the model as a REST API using Flask for real-time predictions.'
+            'Led the AI development for the Recraftify mobile app, building a model that can recognize different types of trash.',
+            'Spent hours manually labeling over 23,000 photos of garbage to train the AI (it was worth it).',
+            'Hit 95% accuracy by using Transfer Learning with MobileNetV2.',
+            'Deployed the AI as a fast REST API so the app gets answers instantly.'
         ]
     },
     {
         title: 'WhatsApp RAG Bot',
         tech: ['Twilio', 'OpenAI', 'AWS', 'Flask'],
         image: '/project-warag.jpeg',
-        desc: 'Real-time document interaction bot integrated with WhatsApp for automated customer responses.',
+        desc: 'A WhatsApp bot that reads PDFs and chats with customers in real-time.',
         details: [
-            'Created a PDF RAG chatbot integrated with Twilio and OpenAI API.',
-            'Enabled real-time processing of user data and automated responses.',
-            'Hosted on AWS with Ngrok for tunneling during development.'
+            'Hooked up a custom AI chatbot straight to WhatsApp using Twilio and OpenAI.',
+            'Taught the bot how to read company PDFs so it can answer customer questions automatically.',
+            'Hosted everything on AWS so it runs 24/7 without a hitch.'
         ]
     },
     {
         title: 'Sentiment Analysis',
         tech: ['TensorFlow', 'LSTM', 'Regex', 'Python'],
-        desc: 'Customer sentiment classification for service providers with 92% accuracy using LSTM.',
+        image: '/project_sentiment.png',
+        desc: 'An AI tool that reads tweets and figures out if customers are happy or angry.',
         details: [
-            'Conducted sentiment analysis on a dataset of customer tweets regarding cellular service providers.',
-            'Classified tweets into Positive or Negative categories to identify customer satisfaction points.',
-            'Developed an LSTM model achieving 92% accuracy.'
+            'Analyzed a massive pile of customer tweets about phone companies.',
+            'Built an AI that sorts the tweets into "Positive" and "Negative" piles to see what makes customers happy (or mad).',
+            'Got the AI (an LSTM model) to guess correctly 92% of the time.'
         ]
     },
     {
         title: 'Coursera Analysis',
         tech: ['Scrapy', 'DeepSeek', 'NLTK'],
-        desc: 'End-to-end research analyzing 1,300+ reviews using LLMs and Multinomial Logistic Regression.',
+        image: '/project_coursera.png',
+        desc: 'A deep dive into thousands of Coursera reviews to see what students really think.',
         details: [
-            'Conducted end-to-end research to analyze the quality of Coursera\'s platform services.',
-            'Analyzed 1,308 user reviews using LLMs to classify feedback into SERVQUAL dimensions.',
-            'Performed statistical analysis using Multinomial Logistic Regression.'
+            'Scraped and analyzed over 1,300 reviews from Coursera to see how good their platform actually is.',
+            'Used large language models to read the reviews and categorize them into specific service quality metrics.',
+            'Crunched the numbers using logistic regression to prove the findings statistically.'
         ]
     }
 ];
@@ -330,45 +337,93 @@ const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     return (
-        <section id="projects" className="section-padding">
-            <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}>
-                Featured Projects
-            </h2>
+        <section id="projects" className="section-padding" style={{ backgroundColor: 'var(--bg-color)' }}>
+            
+            <div style={{ marginBottom: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h2 className="text-huge" style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                    visual <br/> <span style={{ color: 'var(--accent-color)' }}>portfolio.</span>
+                </h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '500px', textAlign: 'center' }}>
+                    A curated selection of my data pipelines, AI models, and automation workflows.
+                </p>
+            </div>
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '2rem'
+                gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
+                gap: '4rem',
+                alignItems: 'start'
             }}>
                 {projects.map((proj, index) => (
-                    <RevealOnScroll key={index} delay={index * 0.1}>
-                        <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                            <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{proj.title}</h3>
-                            <p style={{ color: 'var(--text-secondary)', flexGrow: 1, marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+                    <RevealOnScroll key={index} delay={(index % 2) * 0.1}>
+                        <div 
+                            onClick={() => setSelectedProject(proj)}
+                            style={{ 
+                                display: 'flex', 
+                                flexDirection: 'column', 
+                                height: '100%',
+                                marginTop: typeof window !== 'undefined' && window.innerWidth > 768 && index % 2 !== 0 ? '5rem' : '0', 
+                                cursor: 'pointer',
+                                transition: 'transform 0.4s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-10px)';
+                                const img = e.currentTarget.querySelector('img');
+                                if (img) img.style.filter = 'grayscale(0%)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                const img = e.currentTarget.querySelector('img');
+                                if (img) img.style.filter = 'grayscale(80%)';
+                            }}
+                        >
+                            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '1rem' }}>
+                                <span className="serif-text" style={{ fontSize: '3.5rem', color: 'var(--text-primary)', opacity: 0.2, lineHeight: 1 }}>
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+                                <h3 style={{ fontSize: '1.8rem', fontWeight: 800, lineHeight: 1.1 }}>
+                                    {proj.title}
+                                </h3>
+                            </div>
+                            
+                            {(proj.image || (proj.images && proj.images.length > 0)) ? (
+                                <div className="artsy-shape-1" style={{ width: '100%', height: '280px', marginBottom: '1.5rem', backgroundColor: '#e0e0e0', overflow: 'hidden' }}>
+                                    <img 
+                                        src={proj.images ? proj.images[0] : proj.image} 
+                                        alt={proj.title} 
+                                        style={{ 
+                                            width: '100%', 
+                                            height: '100%', 
+                                            objectFit: 'cover', 
+                                            filter: 'grayscale(80%)',
+                                            transition: 'filter 0.5s ease'
+                                        }} 
+                                    />
+                                </div>
+                            ) : (
+                                <ProjectVisual 
+                                    variant={index % 3 === 0 ? 'pipeline' : index % 3 === 1 ? 'nodes' : 'terminal'} 
+                                    title={proj.title} 
+                                />
+                            )}
+
+                            <p style={{ color: 'var(--text-secondary)', flexGrow: 1, marginBottom: '1.5rem', fontSize: '1.1rem', lineHeight: 1.6 }}>
                                 {proj.desc}
                             </p>
-                            <div className='!mb-3' style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                                {proj.tech.map((t, i) => (
+                            
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: 'auto' }}>
+                                {proj.tech.slice(0, 4).map((t, i) => (
                                     <span key={i} style={{
-                                        fontSize: '0.75rem',
-                                        padding: '4px 8px',
-                                        borderRadius: '4px',
-                                        background: 'rgba(0, 240, 255, 0.1)',
-                                        color: 'var(--accent-cyan)',
-                                        border: '1px solid rgba(0, 240, 255, 0.2)'
+                                        fontSize: '0.8rem',
+                                        fontWeight: 700,
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '1px',
+                                        color: 'var(--text-primary)'
                                     }}>
-                                        {t}
+                                        {t}{i < Math.min(proj.tech.length, 4) - 1 ? ' • ' : ''}
                                     </span>
                                 ))}
-                            </div>
-
-                            <div
-                                className="flex justify-end items-center gap-1 cursor-pointer hover:underline text-sm"
-                                onClick={() => setSelectedProject(proj)}
-                                style={{ color: 'var(--accent-cyan)', marginTop: 'auto', alignSelf: 'flex-end', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}
-                            >
-                                View Details
-                                <TbChevronRight size={16} />
+                                {proj.tech.length > 4 && <span style={{ fontSize: '0.8rem', fontWeight: 700 }}> • MORE</span>}
                             </div>
                         </div>
                     </RevealOnScroll>

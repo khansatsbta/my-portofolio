@@ -1,178 +1,131 @@
 import React from 'react';
-import { TbMapPin } from 'react-icons/tb';
-import { HiOutlineSparkles } from "react-icons/hi2";
-
-const TypingEffect = ({ text }) => {
-    const [index, setIndex] = React.useState(0);
-    const [subIndex, setSubIndex] = React.useState(0);
-    const [reverse, setReverse] = React.useState(false);
-    const [blink, setBlink] = React.useState(true);
-
-    React.useEffect(() => {
-        if (index === text.length) return;
-
-        if (subIndex === text[index].length + 1 && !reverse) {
-            setReverse(true);
-            return;
-        }
-
-        if (subIndex === 0 && reverse) {
-            setReverse(false);
-            setIndex((prev) => (prev + 1) % text.length);
-            return;
-        }
-
-        const timeout = setTimeout(() => {
-            setSubIndex((prev) => prev + (reverse ? -1 : 1));
-        }, Math.max(reverse ? 75 : subIndex === text[index].length ? 1000 : 150, parseInt(Math.random() * 350)));
-
-        return () => clearTimeout(timeout);
-    }, [subIndex, index, reverse, text]);
-
-    // Blink cursor
-    React.useEffect(() => {
-        const timeout2 = setTimeout(() => {
-            setBlink((prev) => !prev);
-        }, 500);
-        return () => clearTimeout(timeout2);
-    }, [blink]);
-
-    return (
-        <>
-            {`${text[index].substring(0, subIndex)}${blink ? "|" : " "}`}
-        </>
-    );
-};
+import { TbMapPin, TbArrowUpRight } from 'react-icons/tb';
 
 const Hero = () => {
     return (
         <section id="home" className="section-padding" style={{
             minHeight: '100vh',
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
             alignItems: 'center',
-            textAlign: 'center',
-            paddingTop: '80px' // for navbar
+            paddingTop: '120px' // Account for navbar
         }}>
             <div style={{
-                marginBottom: '1rem',
-                padding: '0.5rem 1rem',
-                border: '1px solid var(--accent-cyan)',
-                borderRadius: '50px',
-                color: 'var(--accent-cyan)',
-                fontSize: '0.9rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px'
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '4rem',
+                width: '100%',
+                alignItems: 'center'
             }}>
-                <HiOutlineSparkles /> Available for Work and Collaboration
-            </div>
 
-            <div style={{
-                marginBottom: '1.5rem',
-                color: 'var(--text-secondary)',
-                fontSize: '1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '5px'
-            }}>
-                <TbMapPin size={18} style={{ color: 'var(--accent-cyan)' }} />
-                Jakarta / Tangerang, Indonesia
-            </div>
+                {/* Left Content - Typography */}
+                <div style={{ zIndex: 2 }}>
+                    <div style={{ marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <span className="serif-text" style={{ fontSize: '2rem' }}>Hey, there</span>
+                        <div style={{ width: '60px', height: '1px', backgroundColor: 'var(--text-primary)' }} />
+                    </div>
 
-            <div style={{
-                marginBottom: '2rem',
-                position: 'relative'
-            }}>
-                <div style={{
-                    width: '180px',
-                    height: '180px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-purple))',
-                    padding: '4px',
-                    boxShadow: '0 0 20px rgba(0, 240, 255, 0.3)'
-                }}>
-                    <img
-                        src="/profile.jpg"
-                        alt="Profile"
-                        style={{
-                            width: '100%',
-                            height: '100%',
+                    <h1 className="text-huge" style={{ marginBottom: '1.5rem', marginTop: '-1rem' }}>
+                        khansa <br /> tsabita.
+                    </h1>
+
+                    <p style={{
+                        maxWidth: '450px',
+                        fontSize: '1.15rem',
+                        color: 'var(--text-secondary)',
+                        marginBottom: '3rem',
+                        lineHeight: 1.6
+                    }}>
+                        I'm a Data Engineer who loves building AI tools. I focus on making data flow seamlessly and creating smart solutions that actually make sense.
+                    </p>
+
+                    <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <span style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1 }}>+2</span>
+                            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Years Exp</span>
+                        </div>
+                        <div style={{ width: '1px', height: '40px', backgroundColor: 'rgba(0,0,0,0.1)' }} />
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <span style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1 }}>10+</span>
+                            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Projects</span>
+                        </div>
+
+                        <a href="#projects" style={{
+                            marginLeft: 'auto',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: '65px',
+                            height: '65px',
                             borderRadius: '50%',
-                            objectFit: 'cover',
-                            background: '#1a1a1a' // Fallback color
+                            backgroundColor: 'var(--text-primary)',
+                            color: 'var(--bg-color)',
+                            transition: 'transform 0.3s, background 0.3s',
+                            textDecoration: 'none'
                         }}
-                        onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.style.display = 'none'; // Hide if missing
-                            e.target.parentNode.style.display = 'none'; // Hide container too if you want, or show placeholder
-                        }}
-                    />
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.1)';
+                                e.currentTarget.style.backgroundColor = 'var(--accent-color)';
+                                e.currentTarget.style.color = 'var(--text-primary)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.backgroundColor = 'var(--text-primary)';
+                                e.currentTarget.style.color = 'var(--bg-color)';
+                            }}
+                        >
+                            <TbArrowUpRight size={28} />
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <h1 style={{
-                fontSize: 'clamp(2.5rem, 8vw, 5rem)',
-                fontWeight: 700,
-                marginBottom: '1rem',
-                lineHeight: 1.1
-            }}>
-                Hi, I'm <span className="text-gradient">Khansa Tsabita</span>
-            </h1>
+                {/* Right Content - Artsy Image */}
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div style={{ position: 'relative', width: '100%', maxWidth: '450px' }}>
+                        <div className="artsy-shape-2" style={{
+                            width: '100%',
+                            aspectRatio: '4/5',
+                            backgroundColor: 'var(--accent-color)',
+                            boxShadow: '0 20px 40px rgba(0,0,0,0.08)'
+                        }}>
+                            <img
+                                src="/profile.jpg"
+                                alt="Khansa Tsabita"
+                                className="image-cover"
+                                style={{
+                                    opacity: 0.95,
+                                    filter: 'grayscale(30%) contrast(110%)',
+                                    transition: 'all 0.5s ease'
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.filter = 'grayscale(0%) contrast(100%)'}
+                                onMouseLeave={(e) => e.currentTarget.style.filter = 'grayscale(30%) contrast(110%)'}
+                                onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.style.display = 'none';
+                                }}
+                            />
+                        </div>
 
-            <h2 style={{
-                fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
-                color: 'var(--text-secondary)',
-                marginBottom: '2rem',
-                fontWeight: 400
-            }}>
-                <TypingEffect text={['Data Engineer', 'AI Enthusiast', 'Pipeline Architect', 'Tech Explorer']} />
-            </h2>
+                        {/* Location Badge */}
+                        <div style={{
+                            position: 'absolute',
+                            bottom: '40px',
+                            left: '-20px',
+                            backgroundColor: 'var(--bg-color)',
+                            padding: '12px 24px',
+                            borderRadius: '100px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                            fontWeight: 600,
+                            zIndex: 10
+                        }}>
+                            <TbMapPin size={20} color="var(--accent-color)" />
+                            Jakarta / Tangerang
+                        </div>
+                    </div>
+                </div>
 
-            <p style={{
-                maxWidth: '600px',
-                color: 'var(--text-secondary)',
-                fontSize: '1.1rem',
-                marginBottom: '3rem',
-                lineHeight: 1.8
-            }}>
-                Architecting end-to-end data pipelines and building scalable AI solutions.
-                Passionate about turning raw data into meaningful insights.
-            </p>
-
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '4rem' }}>
-                <a href="#projects" className="btn-primary">
-                    View Projects
-                </a>
-                <a href="#contact" className="btn-outline">
-                    Contact Me
-                </a>
-            </div>
-
-            {/* Current Focus / Tech Radar Widget */}
-            <div className="glass-card" style={{
-                padding: '1.5rem 2.5rem',
-                borderRadius: '50px',
-                backdropFilter: 'blur(10px)',
-                background: 'var(--glass-bg)',
-                border: '1px solid var(--glass-border)'
-            }}>
-                <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginRight: '1rem' }}>
-                    Currently Exploring:
-                </span>
-                <span style={{ fontWeight: 600, color: 'var(--accent-cyan)' }}>
-                    Agentic AI Workflows
-                </span>
-                <span style={{ margin: '0 10px', color: 'var(--glass-border)' }}>|</span>
-                <span style={{ fontWeight: 600, color: 'var(--accent-cyan)' }}>
-                    Generative Optimization
-                </span>
-                <span style={{ margin: '0 10px', color: 'var(--glass-border)' }}>|</span>
-                <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
-                    Scaleable Pipelines
-                </span>
             </div>
         </section>
     );

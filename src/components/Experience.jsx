@@ -2,72 +2,112 @@ import React from 'react';
 
 const experiences = [
     {
-        role: 'Data Engineer',
-        company: 'PT eBdesk Teknologi',
-        period: 'January 2026 – Present',
-        description: [
-            'Engineered and deployed robust, scalable data pipelines, managing the full lifecycle from real-time data streaming and production to consumption and ingestion.',
-            'Spearheaded an automated Root Cause Analysis (RCA) system that maps intricate data pipelines into comprehensive Knowledge Graphs. Integrated an advanced AI agent utilizing Chain of Thought (CoT) reasoning to autonomously detect anomalies, trace pipeline failures, and provide instant, actionable remediation strategies.',
-            'Developed an automated, high-throughput web scraping infrastructure capable of harvesting and standardizing unstructured data from multiple external endpoints.',
-            'Engineered an end-to-end conversational AI infrastructure, bridging continuous metadata ingestion pipelines with custom-built MCP tools to enable complex, tool-calling chatbot capabilities.'
+        company: 'PT eBdesk Technology',
+        roles: [
+            {
+                title: 'AI Native (AI Data Specialist)',
+                period: 'September 2026 – Present',
+                description: [
+                    'Built and managed data pipelines from scratch, ensuring real-time data flows smoothly from start to finish.',
+                    'Created a smart AI agent that practically runs social media on its own—liking, commenting, following, and posting content tailored to specific personas.'
+                ]
+            },
+            {
+                title: 'Data Engineer',
+                period: 'January 2026 – September 2026',
+                description: [
+                    'Managed the full lifecycle of large-scale data pipelines, turning raw data streams into usable insights.',
+                    'Set up an AI-driven Root Cause Analysis system that automatically maps out data pipelines, spots anomalies, and tells us exactly how to fix failures.',
+                    'Built a heavy-duty web scraping setup to gather and organize messy data from all over the web.',
+                    'Wired up the backend for a complex conversational AI, connecting data streams to custom tools so the chatbot could actually perform tasks.'
+                ]
+            }
         ]
     },
     {
-        role: 'Data Engineer (Data & AI)',
         company: 'PT Multiartha Prima Sejahtera (LSP Digital Marketing)',
-        period: 'September 2025 – January 2026',
-        description: [
-            'Engineered a full payroll processing system automating base pay, deductions, and tax calculations.',
-            'Developed a real-time financial budget control system with AI-powered OCR for invoice scanning.',
-            'Architected an autonomous AI content pipeline using Qwen LLM for SEO-optimized articles.',
-            'Deployed a RAG-based AI agent for government website information retrieval.',
-            'Developed a B2B lead generation pipeline aggregating university records and enriching them with social media intelligence.',
-            'Developed an automated compliance submission pipeline bridging internal systems with external government platforms sans API.'
+        roles: [
+            {
+                title: 'Data Engineer (Data & AI)',
+                period: 'September 2025 – January 2026',
+                description: [
+                    'Automated the entire payroll system, taking the headache out of calculating base pay, overtime, and taxes for the finance team.',
+                    'Built a financial tracking tool that uses AI to read invoices and checks them against budgets in real-time, instantly alerting the team of any overspending.',
+                    'Designed an AI bot that hunts down trending news and writes readable, SEO-friendly articles, then automatically publishes them to WordPress.',
+                    'Created an AI agent that cuts through the noise of complicated government websites, helping users find exactly what they need just by asking questions.'
+                ]
+            }
         ]
     },
     {
-        role: 'Data Scientist Intern',
         company: 'M-Knows Consulting',
-        period: 'September 2024 – January 2025',
-        description: [
-            'Built an AI Location Movement Credit Scoring model with 96% accuracy.',
-            'Developed a PDF RAG Chatbot with similarity indexing for document search.',
-            'Created a PDF RAG WhatsApp Chatbot integrated with OpenAI API and Twilio.'
+        roles: [
+            {
+                title: 'Data Scientist Intern',
+                period: 'September 2024 – January 2025',
+                description: [
+                    'Developed a credit scoring model (with 96% accuracy!) that predicts credit risk based on how and where a user travels.',
+                    'Built a smart chatbot that can read, search, and answer questions from massive PDFs in seconds.',
+                    'Created a WhatsApp bot that acts as an instant customer service agent, answering questions in real-time.',
+                    'Worked closely with different teams to make sure all these fast-moving AI projects launched on time.'
+                ]
+            }
         ]
     }
 ];
 
 const Experience = () => {
     return (
-        <section id="experience" className="section-padding">
-            <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}>
-                Work Experience
-            </h2>
+        <section id="experience" className="section-padding" style={{ backgroundColor: 'var(--bg-color)' }}>
+            
+            <div style={{ marginBottom: '6rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h2 className="text-huge" style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                    career <br/> <span style={{ color: 'var(--accent-color)' }}>exhibition.</span>
+                </h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '500px', textAlign: 'center' }}>
+                    A timeline of my professional journey in data engineering and AI.
+                </p>
+            </div>
 
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
                 {experiences.map((exp, index) => (
-                    <div key={index} className="glass-card" style={{ marginBottom: '2rem', position: 'relative' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', marginBottom: '1rem' }}>
-                            <div>
-                                <h3 style={{ fontSize: '1.5rem', color: 'var(--text-primary)' }}>{exp.role}</h3>
-                                <h4 style={{ color: 'var(--accent-purple)', fontWeight: 600 }}>{exp.company}</h4>
-                            </div>
-                            <span style={{
-                                background: 'rgba(255,255,255,0.1)',
-                                padding: '4px 12px',
-                                borderRadius: '20px',
-                                fontSize: '0.85rem',
-                                height: 'fit-content'
-                            }}>
-                                {exp.period}
+                    <div key={index} style={{ borderBottom: index !== experiences.length - 1 ? '1px solid rgba(0,0,0,0.1)' : 'none', paddingBottom: '4rem' }}>
+                        
+                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '3rem' }}>
+                            <span style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--text-primary)', opacity: 0.2 }}>
+                                {String(index + 1).padStart(2, '0')}
                             </span>
+                            <h3 className="serif-text" style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+                                {exp.company}
+                            </h3>
                         </div>
-
-                        <ul style={{ paddingLeft: '1.5rem', listStyleType: 'disc', color: 'var(--text-secondary)' }}>
-                            {exp.description.map((item, i) => (
-                                <li key={i} style={{ marginBottom: '0.5rem' }}>{item}</li>
+                        
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
+                            {exp.roles.map((role, rIndex) => (
+                                <div key={rIndex} style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'start' }}>
+                                    
+                                    <div style={{ flex: '1 1 250px', borderTop: '3px solid var(--text-primary)', paddingTop: '1rem' }}>
+                                        <h4 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.3 }}>
+                                            {role.title}
+                                        </h4>
+                                        <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>
+                                            {role.period}
+                                        </span>
+                                    </div>
+                                    
+                                    <div style={{ flex: '2 1 400px' }}>
+                                        <ul style={{ listStyleType: 'none', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+                                            {role.description.map((item, i) => (
+                                                <li key={i} style={{ marginBottom: '1.2rem', position: 'relative', paddingLeft: '2rem' }}>
+                                                    <span style={{ position: 'absolute', left: 0, top: '2px', color: 'var(--accent-color)', fontWeight: 800 }}>—</span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 ))}
             </div>
