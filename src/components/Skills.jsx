@@ -2,6 +2,18 @@ import { TbBrain, TbDatabase, TbCloud, TbServer, TbChartBar, TbUsers, TbWorld, T
 import RevealOnScroll from './RevealOnScroll';
 
 const skillsData = {
+    "Core Competencies": {
+        icon: <TbBrain size={24} />,
+        items: [
+            "Data Pipeline Architecture & ETL",
+            "Artificial Intelligence & Machine Learning",
+            "Large Language Models (LLMs) & RAG",
+            "Web Scraping & Data Ingestion",
+            "Vector & Relational Databases",
+            "Cloud Platforms",
+            "Cross-functional Collaboration"
+        ]
+    },
     "AI & Machine Learning": {
         icon: <TbBrain size={24} />,
         items: ["TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "Agno", "Transformers", "Unsloth", "vLLM", "MCP", "RAG", "OCR"]

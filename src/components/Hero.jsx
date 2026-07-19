@@ -35,7 +35,7 @@ const Hero = () => {
                         marginBottom: '3rem',
                         lineHeight: 1.6
                     }}>
-                        I'm a Data Engineer who loves building AI tools. I focus on making data flow seamlessly and creating smart solutions that actually make sense.
+                        I'm a Data & AI Engineer. I focus on architecting scalable data pipelines and building applied AI solutions that solve real-world problems.
                     </p>
 
                     <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>

@@ -32,19 +32,13 @@ const About = () => {
                         </h2>
                         
                         <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.7 }}>
-                            I started out studying Information Systems because I loved seeing how data flows behind the scenes. Pretty soon, I realized I didn't just want to organize data—I wanted to do cool things with it!
+                            As a Data & AI Engineer, I architect and deploy robust, scalable data pipelines and AI-integrated solutions. With native Indonesian and advanced English proficiency, I leverage my expertise in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and Knowledge Graphs to transform raw data into intelligent, automated systems that drive operational efficiency.
                         </p>
                         <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.7 }}>
-                            Going from a Data Science Intern to a Data Engineer showed me the big picture. Now, whether I'm building pipelines or playing with AI, my goal is always the same: 
+                            Working closely with cross-functional teams, I ensure our data infrastructure seamlessly supports advanced AI applications. I specialize in bridging the gap between complex data ingestion and autonomous system execution, building end-to-end pipelines that power everything.
                         </p>
-                        <p className="serif-text" style={{ 
-                            fontSize: '1.6rem', 
-                            color: 'var(--text-primary)', 
-                            marginTop: '2.5rem', 
-                            borderLeft: '4px solid var(--accent-color)', 
-                            paddingLeft: '1.5rem' 
-                        }}>
-                            "Make the complicated stuff feel effortless and maybe a little bit like magic."
+                        <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.7 }}>
+                            In addition to my core engineering responsibilities, I focus on system reliability and scalability. I develop custom Model Context Protocol (MCP) server tools, establish high-throughput web scraping infrastructures, and maintain comprehensive pipeline architecture documentation to streamline operations and empower seamless, tool-calling AI capabilities.
                         </p>
                     </div>
 

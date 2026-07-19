@@ -64,9 +64,17 @@ const Experience = () => {
                 <h2 className="text-huge" style={{ textAlign: 'center', marginBottom: '1rem' }}>
                     career <br/> <span style={{ color: 'var(--accent-color)' }}>exhibition.</span>
                 </h2>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '500px', textAlign: 'center' }}>
-                    A timeline of my professional journey in data engineering and AI.
-                </p>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '800px', textAlign: 'left', lineHeight: 1.7, marginTop: '2rem' }}>
+                    <p style={{ marginBottom: '1rem', fontWeight: 700, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '1px' }}>Experience Highlights</p>
+                    <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', listStyleType: 'square' }}>
+                        <li>Hands-on experience in Data Engineering, AI integration, and end-to-end pipeline development</li>
+                        <li>Strong expertise in LLMs, RAG, and Agentic workflows</li>
+                        <li>Proven track record of developing automated financial, payroll, and data retrieval systems</li>
+                        <li>Collaborative team player accustomed to working with diverse, cross-functional stakeholders</li>
+                        <li>Skilled in architecting Knowledge Graphs and integrating advanced AI reasoning (Chain of Thought)</li>
+                        <li>Native Indonesian and advanced English proficiency</li>
+                    </ul>
+                </div>
             </div>
 
             <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem' }}>

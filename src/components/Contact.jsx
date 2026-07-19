@@ -14,8 +14,8 @@ const Contact = () => {
                 <h2 className="text-huge" style={{ marginBottom: '2.5rem', lineHeight: 1 }}>
                     let's <br/><span className="serif-text" style={{ color: 'var(--accent-color)' }}>connect.</span>
                 </h2>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '3.5rem', fontSize: '1.25rem' }}>
-                    Interested in collaborating or have a question? Feel free to reach out.
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '3.5rem', fontSize: '1.25rem', lineHeight: 1.6 }}>
+                    Let's connect! If you are looking for a Data Engineer, AI Engineer, or Data Scientist with a passion for building intelligent infrastructure—or if you have exciting projects to collaborate on—please don't hesitate to reach out.
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', alignItems: 'center' }}>
