@@ -6,7 +6,7 @@ const experiences = [
         roles: [
             {
                 title: 'AI Native (AI Data Specialist)',
-                period: 'September 2026 – Present',
+                period: 'June 2026 – Present',
                 description: [
                     'Built and managed data pipelines from scratch, ensuring real-time data flows smoothly from start to finish.',
                     'Created a smart AI agent that practically runs social media on its own—liking, commenting, following, and posting content tailored to specific personas.'
@@ -14,7 +14,7 @@ const experiences = [
             },
             {
                 title: 'Data Engineer',
-                period: 'January 2026 – September 2026',
+                period: 'January 2026 – June 2026',
                 description: [
                     'Managed the full lifecycle of large-scale data pipelines, turning raw data streams into usable insights.',
                     'Set up an AI-driven Root Cause Analysis system that automatically maps out data pipelines, spots anomalies, and tells us exactly how to fix failures.',
@@ -59,10 +59,10 @@ const experiences = [
 const Experience = () => {
     return (
         <section id="experience" className="section-padding" style={{ backgroundColor: 'var(--bg-color)' }}>
-            
+
             <div style={{ marginBottom: '6rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <h2 className="text-huge" style={{ textAlign: 'center', marginBottom: '1rem' }}>
-                    career <br/> <span style={{ color: 'var(--accent-color)' }}>exhibition.</span>
+                    career <br /> <span style={{ color: 'var(--accent-color)' }}>exhibition.</span>
                 </h2>
                 <div style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '800px', textAlign: 'left', lineHeight: 1.7, marginTop: '2rem' }}>
                     <p style={{ marginBottom: '1rem', fontWeight: 700, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '1px' }}>Experience Highlights</p>
@@ -80,7 +80,7 @@ const Experience = () => {
             <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
                 {experiences.map((exp, index) => (
                     <div key={index} style={{ borderBottom: index !== experiences.length - 1 ? '1px solid rgba(0,0,0,0.1)' : 'none', paddingBottom: '4rem' }}>
-                        
+
                         <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '3rem' }}>
                             <span style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--text-primary)', opacity: 0.2 }}>
                                 {String(index + 1).padStart(2, '0')}
@@ -89,11 +89,11 @@ const Experience = () => {
                                 {exp.company}
                             </h3>
                         </div>
-                        
+
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
                             {exp.roles.map((role, rIndex) => (
                                 <div key={rIndex} style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'start' }}>
-                                    
+
                                     <div style={{ flex: '1 1 250px', borderTop: '3px solid var(--text-primary)', paddingTop: '1rem' }}>
                                         <h4 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.3 }}>
                                             {role.title}
@@ -102,7 +102,7 @@ const Experience = () => {
                                             {role.period}
                                         </span>
                                     </div>
-                                    
+
                                     <div style={{ flex: '2 1 400px' }}>
                                         <ul style={{ listStyleType: 'none', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
                                             {role.description.map((item, i) => (
