@@ -6,15 +6,18 @@ const experiences = [
         roles: [
             {
                 title: 'AI Native (AI Data Specialist)',
-                period: 'June 2026 – Present',
+                period: 'September 2026 – Present',
                 description: [
                     'Built and managed data pipelines from scratch, ensuring real-time data flows smoothly from start to finish.',
-                    'Created a smart AI agent that practically runs social media on its own—liking, commenting, following, and posting content tailored to specific personas.'
+                    'Scraped and processed data from various sources (social media and website) based on keywords, accounts, personas, etc.',
+                    'Created a smart AI agent that practically runs social media on its own—liking, commenting, following, and posting content tailored to specific personas.',
+                    'Develop various MCP tools for AI agents (tool search, aggregations, sandbox scraper, etc.)',
+                    'Researched and developed internal use tools.'
                 ]
             },
             {
                 title: 'Data Engineer',
-                period: 'January 2026 – June 2026',
+                period: 'January 2026 – September 2026',
                 description: [
                     'Managed the full lifecycle of large-scale data pipelines, turning raw data streams into usable insights.',
                     'Set up an AI-driven Root Cause Analysis system that automatically maps out data pipelines, spots anomalies, and tells us exactly how to fix failures.',
