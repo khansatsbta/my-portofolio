@@ -10,6 +10,7 @@
   --accent-color: #ffb703; /* Mustard yellow from reference */
   --dark-section-bg: #121212;
   --dark-section-text: #f8f7f4;
+  --border-subtle: rgba(18, 18, 18, 0.12);
 
   /* Spacing */
   --spacing-sm: 8px;
@@ -250,4 +251,10 @@ ul {
 
 .cursor-blink {
   animation: cursorBlink 1s step-end infinite;
+}
+
+@media (min-width: 769px) {
+  .project-card-stagger {
+    margin-top: 5rem;
+  }
 }

@@ -214,7 +214,7 @@ const ProjectModal = ({ project, onClose }) => {
                         marginBottom: '1.5rem',
                         borderRadius: '12px',
                         overflow: 'hidden',
-                        border: '1px solid var(--glass-border)',
+                        border: '1px solid var(--border-subtle)',
                         position: 'relative'
                     }}>
                         <img
@@ -284,7 +284,7 @@ const ProjectModal = ({ project, onClose }) => {
                                                 width: '6px',
                                                 height: '6px',
                                                 borderRadius: '50%',
-                                                backgroundColor: idx === currentImageIndex ? 'var(--accent-cyan)' : 'white',
+                                                backgroundColor: idx === currentImageIndex ? 'var(--accent-color)' : 'white',
                                                 opacity: idx === currentImageIndex ? 1 : 0.5
                                             }}
                                         />
@@ -295,7 +295,7 @@ const ProjectModal = ({ project, onClose }) => {
                     </div>
                 )}
 
-                <h3 className="text-gradient" style={{ fontSize: '1.8rem', marginBottom: '1rem', paddingRight: '2rem' }}>
+                <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '1rem', paddingRight: '2rem' }}>
                     {project.title}
                 </h3>
 
@@ -303,11 +303,12 @@ const ProjectModal = ({ project, onClose }) => {
                     {project.tech.map((t, i) => (
                         <span key={i} style={{
                             fontSize: '0.8rem',
-                            padding: '4px 10px',
+                            fontWeight: 600,
+                            padding: '4px 12px',
                             borderRadius: '20px',
-                            background: 'rgba(0, 240, 255, 0.1)',
-                            color: 'var(--accent-cyan)',
-                            border: '1px solid rgba(0, 240, 255, 0.2)'
+                            background: 'var(--bg-color)',
+                            color: 'var(--text-primary)',
+                            border: '1px solid var(--text-primary)'
                         }}>
                             {t}
                         </span>
@@ -318,7 +319,7 @@ const ProjectModal = ({ project, onClose }) => {
                     {project.desc}
                 </p>
 
-                <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '1.5rem' }}>
+                <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '1.5rem' }}>
                     <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '1.2rem' }}>Key Highlights</h4>
                     <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', color: 'var(--text-secondary)' }}>
                         {Array.isArray(project.details) ? project.details.map((detail, i) => (
@@ -358,11 +359,11 @@ const Projects = () => {
                     <RevealOnScroll key={index} delay={(index % 2) * 0.1}>
                         <div 
                             onClick={() => setSelectedProject(proj)}
+                            className={index % 2 !== 0 ? 'project-card-stagger' : ''}
                             style={{ 
                                 display: 'flex', 
                                 flexDirection: 'column', 
                                 height: '100%',
-                                marginTop: typeof window !== 'undefined' && window.innerWidth > 768 && index % 2 !== 0 ? '5rem' : '0', 
                                 cursor: 'pointer',
                                 transition: 'transform 0.4s ease'
                             }}

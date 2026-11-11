@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ProjectVisual = ({ variant, title }) => {
+const ProjectVisual = ({ variant }) => {
     if (variant === 'pipeline') {
         return (
-            <div className="artsy-shape-1" style={{ 
-                width: '100%', height: '280px', marginBottom: '1.5rem', 
+            <div className="artsy-shape-1" style={{
+                width: '100%', height: '280px', marginBottom: '1.5rem',
                 backgroundColor: 'var(--text-primary)', overflow: 'hidden', position: 'relative',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
@@ -19,18 +19,18 @@ const ProjectVisual = ({ variant, title }) => {
             </div>
         );
     }
-    
+
     if (variant === 'nodes') {
         return (
-            <div className="artsy-shape-1" style={{ 
-                width: '100%', height: '280px', marginBottom: '1.5rem', 
+            <div className="artsy-shape-1" style={{
+                width: '100%', height: '280px', marginBottom: '1.5rem',
                 backgroundColor: 'var(--bg-color)', border: '2px solid var(--text-primary)', overflow: 'hidden', position: 'relative',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
                 <div className="pulse-node" style={{ position: 'absolute', top: '30%', left: '20%', width: '10px', height: '10px', backgroundColor: 'var(--accent-color)', borderRadius: '50%' }} />
                 <div className="pulse-node" style={{ position: 'absolute', top: '70%', left: '40%', width: '15px', height: '15px', backgroundColor: 'var(--text-primary)', borderRadius: '50%', animationDelay: '0.5s' }} />
                 <div className="pulse-node" style={{ position: 'absolute', top: '40%', left: '80%', width: '8px', height: '8px', backgroundColor: 'var(--accent-color)', borderRadius: '50%', animationDelay: '1s' }} />
-                
+
                 <svg width="100%" height="100%" style={{ position: 'absolute', opacity: 0.3 }}>
                     <line x1="20%" y1="30%" x2="40%" y2="70%" stroke="var(--text-primary)" strokeWidth="1.5" className="dash-anim" />
                     <line x1="40%" y1="70%" x2="80%" y2="40%" stroke="var(--text-primary)" strokeWidth="1.5" className="dash-anim" />
@@ -45,19 +45,19 @@ const ProjectVisual = ({ variant, title }) => {
 
     // Default terminal
     return (
-        <div className="artsy-shape-1" style={{ 
-            width: '100%', height: '280px', marginBottom: '1.5rem', 
+        <div className="artsy-shape-1" style={{
+            width: '100%', height: '280px', marginBottom: '1.5rem',
             backgroundColor: '#111', overflow: 'hidden', position: 'relative',
             padding: '2rem', display: 'flex', flexDirection: 'column', gap: '10px'
         }}>
             <div className="typing-line" style={{ color: 'var(--accent-color)', fontFamily: 'monospace', fontSize: '1rem', opacity: 0, animationDelay: '0s' }}>
-                > initiating routine...
+                &gt; initiating routine...
             </div>
             <div className="typing-line" style={{ color: 'white', fontFamily: 'monospace', fontSize: '1rem', opacity: 0, animationDelay: '1s' }}>
-                > building knowledge base...
+                &gt; building knowledge base...
             </div>
             <div className="typing-line" style={{ color: 'white', fontFamily: 'monospace', fontSize: '1rem', opacity: 0, animationDelay: '2s' }}>
-                > system robust.
+                &gt; system robust.
             </div>
             <div className="cursor-blink" style={{ width: '10px', height: '18px', backgroundColor: 'var(--accent-color)', marginTop: '5px' }} />
         </div>
